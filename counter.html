@@ -46,24 +46,10 @@
     </div>
 
     <script>
-      async function loadCounter() {
-        try {
-          const response = await fetch('https://api.countapi.xyz/get/veryzer/opsis-site?output=json', {
-            cache: 'no-store'
-          });
-
-          if (!response.ok) {
-            throw new Error('Counter read failed: ' + response.status);
-          }
-
-          const text = await response.text();
-          const data = text ? JSON.parse(text) : {};
-          const value = Number(data.value || 0);
-          document.getElementById('visitorCount').textContent = value.toLocaleString();
-        } catch (error) {
-          console.warn('Counter unavailable:', error);
-          document.getElementById('visitorCount').textContent = 'Unavailable';
-        }
+      function loadCounter() {
+        const key = 'opsis_visitor_count';
+        const value = Number(localStorage.getItem(key) || 0);
+        document.getElementById('visitorCount').textContent = value.toLocaleString();
       }
 
       loadCounter();
