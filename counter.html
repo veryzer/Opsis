@@ -97,14 +97,9 @@
         return formatter.format(date);
       }
 
-      function updateDailyLog() {
+      function renderDailyLog() {
         const raw = localStorage.getItem(dailyKey);
         const log = raw ? JSON.parse(raw) : {};
-        const today = getSydneyDateKey();
-
-        log[today] = Number(log[today] || 0) + 1;
-        localStorage.setItem(dailyKey, JSON.stringify(log));
-
         const entries = Object.entries(log).sort(([a], [b]) => a.localeCompare(b));
         const container = document.getElementById('dailyLog');
 
@@ -123,15 +118,13 @@
         document.getElementById('visitorCount').textContent = value.toLocaleString();
       }
 
-      function trackVisit() {
-        const current = Number(localStorage.getItem(totalKey) || 0);
-        localStorage.setItem(totalKey, String(current + 1));
-        updateDailyLog();
+      function renderPage() {
         loadCounter();
+        renderDailyLog();
       }
 
-      trackVisit();
-      setInterval(loadCounter, 60000);
+      renderPage();
+      setInterval(renderPage, 60000);
     </script>
   </body>
 </html>

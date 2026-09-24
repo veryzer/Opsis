@@ -249,9 +249,23 @@
 
     <script>
       (function trackVisit() {
-        const key = 'opsis_visitor_count';
-        const current = Number(localStorage.getItem(key) || 0);
-        localStorage.setItem(key, String(current + 1));
+        const totalKey = 'opsis_visitor_count';
+        const dailyKey = 'opsis_daily_log';
+
+        const current = Number(localStorage.getItem(totalKey) || 0);
+        localStorage.setItem(totalKey, String(current + 1));
+
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Australia/Sydney',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        });
+
+        const dateKey = formatter.format(new Date());
+        const daily = JSON.parse(localStorage.getItem(dailyKey) || '{}');
+        daily[dateKey] = Number(daily[dateKey] || 0) + 1;
+        localStorage.setItem(dailyKey, JSON.stringify(daily));
       })();
     </script>
 
