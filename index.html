@@ -247,4 +247,26 @@
 
     </footer>
 
+    <script>
+      async function trackVisit() {
+        try {
+          const response = await fetch('https://api.countapi.xyz/hit/veryzer/opsis-site', {
+            method: 'GET',
+            cache: 'no-store'
+          });
+
+          if (!response.ok) {
+            throw new Error('Counter request failed');
+          }
+
+          const data = await response.json();
+          console.log('Opsis visit recorded:', data.value);
+        } catch (error) {
+          console.warn('Opsis visit tracking unavailable:', error);
+        }
+      }
+
+      trackVisit();
+    </script>
+
 <div></div><div></div></body></html>

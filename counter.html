@@ -48,9 +48,16 @@
     <script>
       async function loadCounter() {
         try {
-          const response = await fetch('/counter.txt', { cache: 'no-store' });
-          const text = await response.text();
-          const value = Number.parseInt(text.trim(), 10) || 0;
+          const response = await fetch('https://api.countapi.xyz/get/veryzer/opsis-site', {
+            cache: 'no-store'
+          });
+
+          if (!response.ok) {
+            throw new Error('Counter read failed');
+          }
+
+          const data = await response.json();
+          const value = Number(data.value || 0);
           document.getElementById('visitorCount').textContent = value.toLocaleString();
         } catch (error) {
           document.getElementById('visitorCount').textContent = 'Unavailable';
