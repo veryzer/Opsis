@@ -37,22 +37,100 @@
         font-weight: 700;
         color: #0066ff;
       }
+
+      .daily-log {
+        margin-top: 1.5rem;
+        width: min(360px, 90vw);
+        text-align: left;
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 0.9rem 1rem;
+      }
+
+      .daily-log h3 {
+        margin: 0 0 0.7rem;
+        font-size: 0.85rem;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .daily-log-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.3rem 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+        color: #e2e8f0;
+        font-size: 0.95rem;
+      }
+
+      .daily-log-row:last-child {
+        border-bottom: none;
+      }
     </style>
   </head>
   <body>
     <div class="card">
       <div class="label">Site visitors</div>
       <div id="visitorCount" class="count">Loading...</div>
+
+      <div class="daily-log">
+        <h3>Daily visits (AEST)</h3>
+        <div id="dailyLog"></div>
+      </div>
     </div>
 
     <script>
+      const totalKey = 'opsis_visitor_count';
+      const dailyKey = 'opsis_daily_log';
+
+      function getSydneyDateKey(date = new Date()) {
+        const formatter = new Intl.DateTimeFormat('en-CA', {
+          timeZone: 'Australia/Sydney',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        });
+
+        return formatter.format(date);
+      }
+
+      function updateDailyLog() {
+        const raw = localStorage.getItem(dailyKey);
+        const log = raw ? JSON.parse(raw) : {};
+        const today = getSydneyDateKey();
+
+        log[today] = Number(log[today] || 0) + 1;
+        localStorage.setItem(dailyKey, JSON.stringify(log));
+
+        const entries = Object.entries(log).sort(([a], [b]) => a.localeCompare(b));
+        const container = document.getElementById('dailyLog');
+
+        container.innerHTML = entries.length
+          ? entries.map(([date, count]) => `
+            <div class="daily-log-row">
+              <span>${date}</span>
+              <strong>${Number(count).toLocaleString()}</strong>
+            </div>
+          `).join('')
+          : '<div class="daily-log-row"><span>No visits yet</span><strong>0</strong></div>';
+      }
+
       function loadCounter() {
-        const key = 'opsis_visitor_count';
-        const value = Number(localStorage.getItem(key) || 0);
+        const value = Number(localStorage.getItem(totalKey) || 0);
         document.getElementById('visitorCount').textContent = value.toLocaleString();
       }
 
-      loadCounter();
+      function trackVisit() {
+        const current = Number(localStorage.getItem(totalKey) || 0);
+        localStorage.setItem(totalKey, String(current + 1));
+        updateDailyLog();
+        loadCounter();
+      }
+
+      trackVisit();
       setInterval(loadCounter, 60000);
     </script>
   </body>
