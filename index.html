@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Opsis is a free Windows presentation app for churches, worship teams, and live ministries. Manage lyrics, Bible passages, media, MIDI/MP3 playback, and dual-screen output with a simple church presentation workflow.">
+    <meta name="keywords" content="free presentation software for churches, church worship software, worship presentation app, church lyrics software, dual screen presentation app, Bible presentation software, worship lyrics software, church media presentation, Windows church software">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="author" content="Opsis">
+    <meta name="theme-color" content="#0066ff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Opsis - Free Windows Presentation App for Churches">
+    <meta property="og:description" content="Free presentation software for worship services, church lyrics, Bible passages, media playback, and dual-screen display on Windows.">
+    <meta property="og:image" content="Opsis_Splash_Transparent.png">
+    <meta property="og:image:alt" content="Opsis church presentation software logo">
+    <meta property="og:site_name" content="Opsis">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Opsis - Free Windows Presentation App for Churches">
+    <meta name="twitter:description" content="Free Windows presentation app for worship services, church lyrics, Bible passages, and dual-screen display.">
+    <meta name="twitter:image" content="Opsis_Splash_Transparent.png">
+    <title>Opsis - Free Windows Presentation App for Churches</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Opsis",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": ["Windows 10", "Windows 11"],
+        "description": "Free presentation software for churches and worship teams, designed for dual-screen control, lyrics, Bible passages, live media playback, and stage foldback output.",
+        "softwareVersion": "2.3",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Organization",
+          "name": "Opsis"
+        },
+        "keywords": "church presentation software, worship lyrics software, free church presentation app, Bible presentation software, Windows church software"
+      }
+    </script>
+    <style>
+      :root {
+        --primary-blue: #0066ff;
+        --dark-blue: #003399;
+        --green-accent: #00cc66;
+        --dark-bg: #0f172a;
+        --card-bg: #1e293b;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      a { color: inherit; }
+
+      header {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        border-bottom: 1px solid #334155;
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .logo-area { display: flex; align-items: center; gap: 1rem; }
+      .logo-area img { height: 40px; width: auto; }
+      .logo-area span { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; color: var(--text-main); }
+
+      .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+      .nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+      .nav-links a:hover { color: var(--text-main); }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--primary-blue);
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+      }
+      .btn:hover { background-color: #2563eb; }
+
+      .hero {
+        padding: 5rem 2rem;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero img.hero-logo {
+        max-width: 280px;
+        height: auto;
+        margin-bottom: 2rem;
+        filter: drop-shadow(0 10px 20px rgba(0, 102, 255, 0.2));
+      }
+      .hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 800; letter-spacing: -1px; }
+      .hero h1 span { color: var(--primary-blue); }
+      .hero p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 2rem; }
+      .hero-buttons { display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap; }
+      .btn-secondary { background-color: transparent; border: 1px solid #475569; color: var(--text-main); }
+      .btn-secondary:hover { background-color: #334155; }
+
+      .features { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+      .feature-card { background-color: var(--card-bg); border: 1px solid #334155; padding: 2rem; border-radius: 12px; transition: transform 0.2s ease, border-color 0.2s ease; }
+      .feature-card:hover { transform: translateY(-4px); border-color: var(--primary-blue); }
+      .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: var(--text-main); }
+      .feature-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+      .specs-section { max-width: 900px; margin: 0 auto 5rem auto; padding: 0 2rem; }
+      .specs-card { background-color: var(--card-bg); border: 1px solid #334155; border-radius: 12px; padding: 2.5rem; }
+      .specs-card h2 { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+      .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+      .spec-item h4 { color: var(--primary-blue); margin-bottom: 0.5rem; }
+      .spec-item p { color: var(--text-muted); font-size: 0.9rem; }
+
+      footer { border-top: 1px solid #334155; padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+      .footer-divider { border: 0; border-top: 1px solid #334155; margin: 1.25rem auto 1rem; max-width: 700px; }
+      .support-gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1rem; }
+      .support-gallery a { display: inline-block; text-decoration: none; }
+      .support-gallery img { display: block; width: 220px; height: auto; border-radius: 10px; border: 1px solid #334155; background: #0f172a; transition: transform 0.2s ease, opacity 0.2s ease; }
+      .support-gallery a:hover img { transform: translateY(-2px); opacity: 0.95; }
+      code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 2.25rem; }
+        .nav-links { display: none; }
+      }
+    </style>
+  </head>
+<body>
+    <header>
+      <div class="logo-area">
+        <img src="Opsis_Splash_Transparent.png" alt="Opsis Logo">
+        <span>Opsis</span><span><span style="font-size: 0.75rem;"><i>(Formerly WorshipDesk)</i></span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#specs">Screen Shots</a>
+        
+        <a href="https://github.com/veryzer/Opsis/releases/download/V2.0/OpsisV2.exe" class="btn">Download Free</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img src="Opsis_Splash_Transparent.png" alt="Opsis" class="hero-logo">
+        <h1>A Free Presentation App for <span>Worship Services</span></h1>
+        <p>
+          Dual-screen presentation software for Windows.<br>
+          Effortlessly manage video, photos, Syncronise MID MP3, live-band lyrics, and Bible readings.
+        </p>
+        <p>It can even output to a third screen for Stage Foldback video.</p>
+        <div class="hero-buttons">
+          <a href="https://github.com/veryzer/Opsis/releases/download/V2.0/OpsisV2.exe" class="btn" target="_blank" rel="noopener noreferrer">Get Opsis v2</a>
+          <a href="https://github.com/veryzer/worshipdeck/releases/download/Opsis2.3/OpsisV2.3.exe" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Opsis 2.3 (Experimental)</a>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="feature-card">
+          <h3>Dual-Screen Presenter</h3>
+          <p>Operate seamlessly from the Control window on your computer while the congregation enjoys a crisp display on the projector or secondary screen.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Multi-Format Media</h3>
+          <p>Support for MP4, MOV, MKV videos, JPEG/PNG photo fades/wipes, MIDI/MP3 files with automated on-screen lyrics, and live-band lyrics.</p>
+        </div>
+        <div class="feature-card">
+          <h3>XML Bible Integration</h3>
+          <p>Quickly look up book, chapter, and verse ranges with two-verse clean slides directly synced onto your projector/second monitor.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Portable &amp; Lightweight</h3>
+          <p>No complicated installation required. Simply copy <code>Opsis.exe</code> to your desired working folder, double click - it unpack itself, ready for use on Win 10/11.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Built-in FluidSynth &amp; MIDI</h3>
+          <p>Full support for karaoke (.mid / .kar) files, instruments adjustment, track volume controls, tempo, and key transpose sliders.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Tablet Touch Mode</h3>
+          <p>Full-screen 3-column card grid view tailored for touch screens with easy RECALL and COMING queue management.</p>
+        </div><div class="feature-card">
+          <h3>V 2.3 Experimental:</h3><p>- PowerPoint integration (Control)&nbsp;</p><div>- ProPresenter file player</div><div>- Video Backgrounds in Simple lyric mode</div><p></p>
+          
+        </div>
+      </section>
+
+      <section id="specs" class="specs-section">
+        <div class="specs-card">
+          <h2>Quick Details &amp; Requirements</h2>
+          <div class="specs-grid">
+            <div class="spec-item">
+              <h4>Platform</h4>
+              <p>Windows 10 or Windows 11 (Portable Executable)</p>
+            </div>
+            <div class="spec-item">
+              <h4>Projector Canvas</h4>
+              <p>Composed at native resolution and scaled cleanly without cropping.</p>
+            </div>
+            <div class="spec-item">
+              <h4>Custom Themes</h4>
+              <p>Dark Mode, Light Mode, and High-Contrast Psychedelic Mode for desk operators.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Opsis is free. If it blesses your church, consider supporting the project. Built for worship leaders and operators.</p>
+      <p>
+        <a href="https://ko-fi.com/tlvpcom" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; color: #ff5f5f; text-decoration: none; font-weight: 600;">
+          <img src="kofi_cup.gif" alt="Ko-fi" style="width: 24px; height: 24px; display: inline-block;">
+          <span>Buy me a coffee</span>
+        </a>
+      </p>
+
+      <hr class="footer-divider">
+
+      <div class="support-gallery">
+        <a href="MainScreen.jpg" target="_blank" rel="noopener noreferrer"><img src="MainScreen.jpg" alt="Opsis main screen"></a>
+        <a href="Preferences.jpg" target="_blank" rel="noopener noreferrer"><img src="Preferences.jpg" alt="Opsis preferences"></a>
+        <a href="Projection.jpg" target="_blank" rel="noopener noreferrer"><img src="Projection.jpg" alt="Opsis projection"></a>
+        <a href="Tablet Mode.jpg" target="_blank" rel="noopener noreferrer"><img src="Tablet Mode.jpg" alt="Opsis tablet mode"></a>
+      </div>
+    </footer>
+  
+
+<div></div><div></div></body></html>
